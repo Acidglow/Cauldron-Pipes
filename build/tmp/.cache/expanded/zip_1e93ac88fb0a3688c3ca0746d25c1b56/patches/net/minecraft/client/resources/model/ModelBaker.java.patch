@@ -1,0 +1,20 @@
+--- a/net/minecraft/client/resources/model/ModelBaker.java
++++ b/net/minecraft/client/resources/model/ModelBaker.java
+@@ -8,7 +_,7 @@
+ import org.joml.Vector3fc;
+ 
+ @OnlyIn(Dist.CLIENT)
+-public interface ModelBaker {
++public interface ModelBaker extends net.neoforged.neoforge.client.extensions.ModelBakerExtension {
+     ResolvedModel getModel(Identifier p_468655_);
+ 
+     BlockModelPart missingBlockModelPart();
+@@ -20,7 +_,7 @@
+     <T> T compute(ModelBaker.SharedOperationKey<T> p_410340_);
+ 
+     @OnlyIn(Dist.CLIENT)
+-    public interface PartCache {
++    public interface PartCache extends net.neoforged.neoforge.client.extensions.ModelBakerPartCacheExtension {
+         default Vector3fc vector(float p_470811_, float p_470686_, float p_470742_) {
+             return this.vector(new Vector3f(p_470811_, p_470686_, p_470742_));
+         }

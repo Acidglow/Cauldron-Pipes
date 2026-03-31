@@ -1,0 +1,22 @@
+--- a/net/minecraft/network/FriendlyByteBuf.java
++++ b/net/minecraft/network/FriendlyByteBuf.java
+@@ -68,7 +_,7 @@
+ import org.joml.Vector3fc;
+ import org.jspecify.annotations.Nullable;
+ 
+-public class FriendlyByteBuf extends ByteBuf {
++public class FriendlyByteBuf extends ByteBuf implements net.neoforged.neoforge.common.extensions.IFriendlyByteBufExtension {
+     private final ByteBuf source;
+     public static final short MAX_STRING_LENGTH = 32767;
+     public static final int MAX_COMPONENT_STRING_LENGTH = 262144;
+@@ -1636,5 +_,10 @@
+     @Override
+     public boolean release(int p_130347_) {
+         return this.source.release(p_130347_);
++    }
++
++    @org.jetbrains.annotations.ApiStatus.Internal
++    public ByteBuf getSource() {
++        return this.source;
+     }
+ }

@@ -1,0 +1,69 @@
+[30mar.2026 18:35:21.750] [main/INFO] [net.neoforged.fml.startup.Entrypoint/]: JVM Uptime at startup: 106ms
+[30mar.2026 18:35:21.759] [main/INFO] [net.neoforged.fml.loading.FMLLoader/]: Starting FancyModLoader version 10.0.34 (DEDICATED_SERVER in DEV)
+[30mar.2026 18:35:21.759] [main/INFO] [net.neoforged.fml.loading.FMLLoader/]: Game directory: D:\MC projekter\TiledCauldron\runs\gameTestServer
+[30mar.2026 18:35:21.813] [main/INFO] [net.neoforged.fml.loading.EarlyServiceDiscovery/]: Found 2 early service jars (out of 109) in 22ms
+[30mar.2026 18:35:21.813] [main/INFO] [net.neoforged.fml.loading.FMLLoader/]: Loading FML Early Services:
+[30mar.2026 18:35:21.813] [main/INFO] [net.neoforged.fml.loading.FMLLoader/]:  - C:/Users/micha/.gradle/caches/modules-2/files-2.1/net.neoforged.fancymodloader/earlydisplay/10.0.34/6b03e4ea379214464e918a423421a654ac34ca7/earlydisplay-10.0.34.jar
+[30mar.2026 18:35:21.813] [main/INFO] [net.neoforged.fml.loading.FMLLoader/]:  - C:/Users/micha/.gradle/caches/modules-2/files-2.1/net.neoforged.fancymodloader/loader/10.0.34/940266c61386e450a76e94b72f06343ab9d3417e/loader-10.0.34.jar
+[30mar.2026 18:35:21.817] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: Not loading early display in headless mode.
+[30mar.2026 18:35:21.845] [main/INFO] [net.neoforged.fml.loading.moddiscovery.locators.GameLocator/]: Detected a joined NeoForge and Minecraft configuration. Applying filtering...
+[30mar.2026 18:35:21.932] [main/INFO] [net.neoforged.fml.loading.moddiscovery.locators.InDevFolderLocator/CORE]: Got mod coordinates TiledCauldron%%D:\MC projekter\TiledCauldron\build\resources\main;TiledCauldron%%D:\MC projekter\TiledCauldron\build\classes\java\main from env
+[30mar.2026 18:35:22.134] [main/WARN] [net.neoforged.jarjar.selection.JarSelector/]: Attempted to select a dependency jar for JarJar which was passed in as source: library:mixinextras.neoforge. Using jar(C:/Users/micha/.gradle/caches/modules-2/files-2.1/io.github.llamalad7/mixinextras-neoforge/0.5.0/d734b83ce6542bb70ea31755c1595b88992dbe65/mixinextras-neoforge-0.5.0.jar)
+[30mar.2026 18:35:22.134] [main/INFO] [net.neoforged.fml.loading.moddiscovery.locators.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
+[30mar.2026 18:35:22.137] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/]: 
+     Mod List:
+		Name Version (Mod Id)
+
+		Minecraft 1.21.11 (minecraft)
+		NeoForge 21.11.0-beta (neoforge)
+		Pipez 1.21.11-1.2.27 (pipez)
+		Tiled Cauldron 7.0 (tiled_cauldron)
+[30mar.2026 18:35:22.478] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/micha/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.16.5+mixin.0.8.7/80fc3a9f592673cea87f4cd702f87991c6c9fe4d/sponge-mixin-0.16.5+mixin.0.8.7.jar Service=FML Env=SERVER
+[30mar.2026 18:35:22.532] [main/INFO] [net.neoforged.fml.loading.FMLLoader/]: Loading FML Plugins:
+[30mar.2026 18:35:22.532] [main/INFO] [net.neoforged.fml.loading.FMLLoader/]:  - C:/Users/micha/.gradle/caches/modules-2/files-2.1/net.neoforged/neoforge/21.11.0-beta/cfa77909f4e4f258c1ec48cfde324e1fd6939f85/neoforge-21.11.0-beta-universal.jar > net.neoforged.neoforge-coremods-21.11.0-beta.jar
+[30mar.2026 18:35:22.670] [main/INFO] [net.neoforged.fml.loading.FMLLoader/]: Building game content classloader:
+ - minecraft (composite(filtered(jar(D:/MC projekter/TiledCauldron/.gradle/repositories/ng_dummy_ng/net/neoforged/neoforge/21.11.0-beta/neoforge-21.11.0-beta.jar)), filtered(jar(D:/MC projekter/TiledCauldron/.gradle/repositories/ng_dummy_ng/net/neoforged/neoforge/21.11.0-beta/neoforge-21.11.0-beta.jar))))
+ - mixinextras.neoforge (jar(C:/Users/micha/.gradle/caches/modules-2/files-2.1/io.github.llamalad7/mixinextras-neoforge/0.5.0/d734b83ce6542bb70ea31755c1595b88992dbe65/mixinextras-neoforge-0.5.0.jar))
+ - neoforge (composite(filtered(jar(C:/Users/micha/.gradle/caches/modules-2/files-2.1/net.neoforged/neoforge/21.11.0-beta/cfa77909f4e4f258c1ec48cfde324e1fd6939f85/neoforge-21.11.0-beta-universal.jar))))
+ - net.neoforged.fml.generated (empty(VirtualJar/net.neoforged.fml.generated))
+ - pipez (jar(C:/Users/micha/.gradle/caches/modules-2/files-2.1/curse.maven/pipez-443900/7312807/fcc8d5fe6090e1d678bf64f7a483cf5a501bb8a2/pipez-443900-7312807.jar))
+ - tiled_cauldron (composite(folder(D:/MC projekter/TiledCauldron/build/resources/main), folder(D:/MC projekter/TiledCauldron/build/classes/java/main)))
+[30mar.2026 18:35:22.694] [main/INFO] [net.neoforged.fml.loading.FMLLoader/]: Built game content classloader in 39ms
+[30mar.2026 18:35:23.172] [main/INFO] [net.minecraft.gametest.framework.GameTestMainUtil/]: Running GameTestMain with cwd 'D:\MC projekter\TiledCauldron\runs\gameTestServer', universe path 'gametestserver'
+[30mar.2026 18:35:23.181] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0).
+[30mar.2026 18:35:27.192] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 21.11.0-beta, for MC 1.21.11
+[30mar.2026 18:35:27.226] [modloading-worker-0/ERROR] [net.neoforged.neoforge.common.OnlyInWarningsHandler/]: The mod tiled_cauldron uses the @OnlyIn annotation; the runtime member-stripping behaviour of this annotation is no longer present, which may lead to issues if that behaviour was relied upon
+[30mar.2026 18:35:27.226] [modloading-worker-0/ERROR] [net.neoforged.neoforge.common.OnlyInWarningsHandler/]: @OnlyIn used on class gisellevonbingen.tiled_cauldron.client.renderer.CauldronFluidRenderer
+[30mar.2026 18:35:27.878] [main/WARN] [net.neoforged.neoforge.server.loading.ServerModLoader/LOADING]: Mods loaded with 1 issues
+[30mar.2026 18:35:27.878] [main/WARN] [net.neoforged.neoforge.server.loading.ServerModLoader/LOADING]: loadwarning.neoforge.onlyin [[tiled_cauldron]]
+[30mar.2026 18:35:27.963] [NeoForge Version Check/INFO] [net.neoforged.fml.VersionChecker/]: [pipez] Starting version check at https://update.maxhenkel.de/neoforge/pipez
+[30mar.2026 18:35:28.009] [main/ERROR] [net.minecraft.server.packs.AbstractPackResources/]: Couldn't load mod/pipez pack metadata: Pack declares support for format 65, but game versions supporting formats 17 to 81 require a supported_formats field. Add "supported_formats": [65, 81] or require a version greater or equal to 82.0.
+[30mar.2026 18:35:28.026] [main/ERROR] [net.minecraft.server.packs.AbstractPackResources/]: Couldn't load mod/pipez pack metadata: Pack declares support for format 65, but game versions supporting formats 17 to 81 require a supported_formats field. Add "supported_formats": [65, 81] or require a version greater or equal to 82.0.
+[30mar.2026 18:35:28.270] [NeoForge Version Check/INFO] [net.neoforged.fml.VersionChecker/]: [pipez] Found status: BETA Current: 1.21.11-1.2.27 Target: 1.21.11-1.2.27
+[30mar.2026 18:35:29.200] [main/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 1486 recipes
+[30mar.2026 18:35:29.212] [main/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1584 advancements
+[30mar.2026 18:35:29.215] [main/INFO] [net.neoforged.neoforge.common.crafting.RecipePriorityManager/]: Loaded 0 recipe priority overrides
+[30mar.2026 18:35:29.454] [Server thread/INFO] [net.minecraft.server.level.progress.LoggingLevelLoadListener/]: Selecting global world spawn...
+[30mar.2026 18:35:29.751] [Server thread/INFO] [net.minecraft.server.level.progress.LoggingLevelLoadListener/]: Loading 0 persistent chunks...
+[30mar.2026 18:35:29.751] [Server thread/INFO] [net.minecraft.server.level.progress.LoggingLevelLoadListener/]: Preparing spawn area: 100%
+[30mar.2026 18:35:29.753] [Server thread/INFO] [net.minecraft.server.level.progress.LoggingLevelLoadListener/]: Time elapsed: 300 ms
+[30mar.2026 18:35:29.759] [Server thread/INFO] [net.minecraft.gametest.framework.GameTestServer/]: Started game test server
+[30mar.2026 18:35:29.775] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[30mar.2026 18:35:29.818] [Server thread/INFO] [net.minecraft.gametest.framework.GameTestServer/]: 5 tests are now running at position 4914671, -59, 1411891!
+[30mar.2026 18:35:30.007] [Server thread/INFO] [net.minecraft.gametest.framework.GameTestRunner/]: Running test environment 'minecraft:default' batch 0 (1 tests)...
+[30mar.2026 18:35:30.256] [Server thread/INFO] [net.minecraft.gametest.framework.GameTestRunner/]: Running test environment 'tiled_cauldron:gametest' batch 0 (4 tests)...
+[30mar.2026 18:35:30.489] [Server thread/INFO] [net.minecraft.gametest.framework.GameTestServer/]: [+++++]
+[30mar.2026 18:35:30.489] [Server thread/INFO] [net.minecraft.gametest.framework.GameTestServer/]: ========= 5 GAME TESTS COMPLETE IN 671.2 ms ======================
+[30mar.2026 18:35:30.489] [Server thread/INFO] [net.minecraft.gametest.framework.GameTestServer/]: All 5 required tests passed :)
+[30mar.2026 18:35:30.491] [Server thread/INFO] [net.minecraft.gametest.framework.GameTestServer/]: ====================================================
+[30mar.2026 18:35:30.499] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[30mar.2026 18:35:30.499] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[30mar.2026 18:35:30.499] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[30mar.2026 18:35:30.805] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Test Level]'/minecraft:overworld
+[30mar.2026 18:35:30.849] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Test Level]'/minecraft:the_nether
+[30mar.2026 18:35:30.863] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Test Level]'/minecraft:the_end
+[30mar.2026 18:35:30.886] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (gametestworld): All chunks are saved
+[30mar.2026 18:35:30.886] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[30mar.2026 18:35:30.886] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[30mar.2026 18:35:30.886] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[30mar.2026 18:35:30.969] [Server thread/INFO] [net.minecraft.gametest.framework.GameTestServer/]: Game test server shutting down

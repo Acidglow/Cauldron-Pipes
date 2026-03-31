@@ -1,0 +1,11 @@
+--- a/com/mojang/blaze3d/systems/GpuDevice.java
++++ b/com/mojang/blaze3d/systems/GpuDevice.java
+@@ -21,7 +_,7 @@
+ 
+ @OnlyIn(Dist.CLIENT)
+ @DontObfuscate
+-public interface GpuDevice {
++public interface GpuDevice extends net.neoforged.neoforge.client.extensions.blaze3d.GpuDeviceExtension {
+     CommandEncoder createCommandEncoder();
+ 
+     GpuSampler createSampler(AddressMode p_455282_, AddressMode p_456046_, FilterMode p_456093_, FilterMode p_455084_, int p_461115_, OptionalDouble p_467563_);
