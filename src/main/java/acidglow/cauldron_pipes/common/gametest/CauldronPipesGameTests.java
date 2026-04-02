@@ -36,6 +36,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.event.RegisterGameTestsEvent;
+import net.neoforged.neoforge.capabilities.BlockCapabilityCache;
+import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public final class CauldronPipesGameTests
@@ -54,6 +56,7 @@ public final class CauldronPipesGameTests
 		registerFunction("partial_bucket_top_up", CauldronPipesGameTests::partialBucketTopUp);
 		registerFunction("partial_lava_persists_through_save", CauldronPipesGameTests::partialLavaPersistsThroughSave);
 		registerFunction("dispenser_only_extracts_full_bucket", CauldronPipesGameTests::dispenserOnlyExtractsFullBucket);
+		registerFunction("cauldron_capability_cache_invalidates_on_block_changes", CauldronPipesGameTests::cauldronCapabilityCacheInvalidatesOnBlockChanges);
 	}
 
 	private CauldronPipesGameTests()
@@ -67,6 +70,7 @@ public final class CauldronPipesGameTests
 		registerTest(event, environment, "partial_bucket_top_up");
 		registerTest(event, environment, "partial_lava_persists_through_save");
 		registerTest(event, environment, "dispenser_only_extracts_full_bucket");
+		registerTest(event, environment, "cauldron_capability_cache_invalidates_on_block_changes");
 	}
 
 	private static void registerFunction(String path, Consumer<GameTestHelper> function)
@@ -168,6 +172,34 @@ public final class CauldronPipesGameTests
 		}
 
 		assertCauldron(helper, Fluids.EMPTY, 0, Blocks.CAULDRON.defaultBlockState());
+		helper.succeed();
+	}
+
+	private static void cauldronCapabilityCacheInvalidatesOnBlockChanges(GameTestHelper helper)
+	{
+		helper.setBlock(CAULDRON_POS, Blocks.CAULDRON);
+
+		BlockCapabilityCache<?, Direction> cache = BlockCapabilityCache.create(Capabilities.Fluid.BLOCK, helper.getLevel(), helper.absolutePos(CAULDRON_POS), Direction.UP);
+		if (cache.getCapability() == null)
+		{
+			helper.fail(Component.literal("Expected a fluid capability for a placed cauldron"), CAULDRON_POS);
+			return;
+		}
+
+		helper.setBlock(CAULDRON_POS, Blocks.AIR);
+		if (cache.getCapability() != null)
+		{
+			helper.fail(Component.literal("Capability cache stayed populated after the cauldron was removed"), CAULDRON_POS);
+			return;
+		}
+
+		helper.setBlock(CAULDRON_POS, Blocks.CAULDRON);
+		if (cache.getCapability() == null)
+		{
+			helper.fail(Component.literal("Capability cache was not refreshed after the cauldron was placed again"), CAULDRON_POS);
+			return;
+		}
+
 		helper.succeed();
 	}
 

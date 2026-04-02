@@ -5,6 +5,7 @@
 	"client": [],
 	"mixins": [
 		"AbstractCauldronBlockMixin",
+		"BlockCapabilityInvalidationMixin",
 		"CauldronBlockMixin",
 		"DispenserBlockMixin",
 		"LayeredCauldronBlockMixin"

@@ -31,6 +31,7 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -48,7 +49,7 @@ public class CauldronPipes
 	{
 		IEventBus fml_bus = ModLoadingContext.get().getActiveContainer().getEventBus();
 		fml_bus.addListener(this::onCommonSetup);
-		fml_bus.addListener(this::onRegisterCapabilities);
+		fml_bus.addListener(EventPriority.HIGHEST, this::onRegisterCapabilities);
 		fml_bus.addListener(CauldronPipesGameTests::registerTests);
 		ModBlockEntityTypes.BLOCK_ENTITY_TYPES.register(fml_bus);
 		CauldronPipesGameTests.TEST_FUNCTIONS.register(fml_bus);
