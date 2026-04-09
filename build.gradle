@@ -1,5 +1,5 @@
 plugins {
-    id "net.neoforged.gradle.userdev" version "7.1.20"
+    id "net.neoforged.gradle.userdev" version "7.1.21"
 }
 
 apply plugin: "java-library"
@@ -7,32 +7,17 @@ apply plugin: "maven-publish"
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(25)
     }
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
 }
 
 base {
     archivesName = rootProject.archives_base_name
 }
-version = "${rootProject.mc_version}-${rootProject.mod_version}"
-group = rootProject.maven_group
-
-repositories {
-    maven {
-        name = "JEI"
-        url = "https://dvs1.progwml6.com/files/maven"
-    }
-    maven {
-        name = "ModMaven"
-        url = "https://modmaven.dev"
-    }
-    maven {
-        name = "CurseForge"
-        url = "https://www.cursemaven.com"
-    }
-}
+version = rootProject.mod_version
+group = rootProject.mod_group_id
 
 accessTransformers {
     file "src/main/resources/META-INF/accesstransformer.cfg"
@@ -47,16 +32,16 @@ runs {
     }
 
     client {
-        systemProperty "forge.enabledGameTestNamespaces", project.mod_id
+        systemProperty "neoforge.enabledGameTestNamespaces", project.mod_id
     }
 
     server {
-        systemProperty "forge.enabledGameTestNamespaces", project.mod_id
-        arguments '--nogui'
+        systemProperty "neoforge.enabledGameTestNamespaces", project.mod_id
+        argument "--nogui"
     }
 
     gameTestServer {
-        systemProperty "forge.enabledGameTestNamespaces", project.mod_id
+        systemProperty "neoforge.enabledGameTestNamespaces", project.mod_id
     }
 
 }
@@ -64,16 +49,15 @@ runs {
 sourceSets.main.resources { srcDir "src/generated/resources" }
 
 dependencies {
-    implementation "net.neoforged:neoforge:${neoforge_api_version}"
-	implementation "curse.maven:pipez-443900:${pipez_file}"
+    implementation "net.neoforged:neoforge:${neo_version}"
 }
 
 tasks.withType(ProcessResources).configureEach {
     var resourceTargets = ["META-INF/neoforge.mods.toml", "*.json"]
     var intoTargets = ["$rootDir/out/production/resources/", "$rootDir/out/production/${project.name}.main/", "$rootDir/bin/main/"]
-    var replaceProperties = [mc_version: mc_version,
+    var replaceProperties = [minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
         mod_id: mod_id, mod_version: mod_version, mod_name: mod_name, mod_description: mod_description, mod_license: mod_license, mod_homepage: mod_homepage, mod_source: mod_source, mod_issues: mod_issues,
-        neoforge_api_version: neoforge_api_version, neoforge_api_version_range: neoforge_api_version_range, neoforge_loader_version: neoforge_loader_version
+        neo_version: neo_version
     ]
     inputs.properties replaceProperties
 
@@ -104,7 +88,7 @@ tasks.named("jar") {
     }
 }
 
-// NeoForm 21.11 beta: apply user AT directly on rename output.
+// NeoForm 26.1: apply user AT directly on rename output.
 afterEvaluate {
     def renameTask = tasks.findByName("neoFormRename")
     def applyUserTask = tasks.findByName("neoFormApplyUserAccessTransformer")

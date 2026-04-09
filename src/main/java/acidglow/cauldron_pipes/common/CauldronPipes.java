@@ -6,9 +6,11 @@ import org.apache.logging.log4j.Logger;
 import acidglow.cauldron_pipes.common.gametest.CauldronPipesGameTests;
 import acidglow.cauldron_pipes.common.registries.ModBlockEntityTypes;
 import acidglow.cauldron_pipes.common.tile.CauldronBlockEntity;
+import acidglow.cauldron_pipes.mixin.CauldronInteractionDispatcherAccessor;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.cauldron.CauldronInteraction;
+import net.minecraft.core.cauldron.CauldronInteractions;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -122,20 +124,21 @@ public class CauldronPipes
 
 	private void wrapBucketInteractions()
 	{
-		this.wrapBucketInteraction(CauldronInteraction.WATER, Items.BUCKET);
-		this.wrapBucketInteraction(CauldronInteraction.WATER, Items.WATER_BUCKET);
-		this.wrapBucketInteraction(CauldronInteraction.WATER, Items.LAVA_BUCKET);
-		this.wrapBucketInteraction(CauldronInteraction.WATER, Items.POWDER_SNOW_BUCKET);
-		this.wrapBucketInteraction(CauldronInteraction.LAVA, Items.BUCKET);
-		this.wrapBucketInteraction(CauldronInteraction.LAVA, Items.WATER_BUCKET);
-		this.wrapBucketInteraction(CauldronInteraction.LAVA, Items.LAVA_BUCKET);
-		this.wrapBucketInteraction(CauldronInteraction.LAVA, Items.POWDER_SNOW_BUCKET);
+		this.wrapBucketInteraction(CauldronInteractions.WATER, Items.BUCKET);
+		this.wrapBucketInteraction(CauldronInteractions.WATER, Items.WATER_BUCKET);
+		this.wrapBucketInteraction(CauldronInteractions.WATER, Items.LAVA_BUCKET);
+		this.wrapBucketInteraction(CauldronInteractions.WATER, Items.POWDER_SNOW_BUCKET);
+		this.wrapBucketInteraction(CauldronInteractions.LAVA, Items.BUCKET);
+		this.wrapBucketInteraction(CauldronInteractions.LAVA, Items.WATER_BUCKET);
+		this.wrapBucketInteraction(CauldronInteractions.LAVA, Items.LAVA_BUCKET);
+		this.wrapBucketInteraction(CauldronInteractions.LAVA, Items.POWDER_SNOW_BUCKET);
 	}
 
-	private void wrapBucketInteraction(CauldronInteraction.InteractionMap map, Item item)
+	private void wrapBucketInteraction(CauldronInteraction.Dispatcher dispatcher, Item item)
 	{
-		CauldronInteraction interaction = map.map().get(item);
-		map.map().put(item, (state, level, pos, player, hand, stack) ->
+		var items = ((CauldronInteractionDispatcherAccessor)dispatcher).cauldron_pipes$getItems();
+		CauldronInteraction interaction = items.getOrDefault(item, CauldronInteraction.DEFAULT);
+		items.put(item, (state, level, pos, player, hand, stack) ->
 		{
 			return shouldBlockVanillaWorldMutation(level, pos, state) ? InteractionResult.TRY_WITH_EMPTY_HAND : interaction.interact(state, level, pos, player, hand, stack);
 		});

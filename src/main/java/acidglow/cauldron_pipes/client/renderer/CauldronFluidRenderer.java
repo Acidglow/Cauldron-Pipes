@@ -5,21 +5,18 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import acidglow.cauldron_pipes.common.CauldronFluidTransfom;
 import acidglow.cauldron_pipes.common.tile.CauldronBlockEntity;
 import net.minecraft.client.renderer.SubmitNodeCollector;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.client.renderer.state.CameraRenderState;
+import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.client.NeoForgeRenderTypes;
 
-@OnlyIn(Dist.CLIENT)
 public class CauldronFluidRenderer implements BlockEntityRenderer<CauldronBlockEntity, CauldronFluidRenderState>
 {
 	private static final float INNER_MIN = 2.0F / 16.0F + 0.001F;
@@ -31,8 +28,8 @@ public class CauldronFluidRenderer implements BlockEntityRenderer<CauldronBlockE
 
 	public CauldronFluidRenderer(BlockEntityRendererProvider.Context context)
 	{
-		this.lavaStill = context.materials().get(ModelBakery.LAVA_STILL);
-		this.lavaFlow = context.materials().get(ModelBakery.LAVA_FLOW);
+		this.lavaStill = context.sprites().get(Sheets.BLOCKS_MAPPER.defaultNamespaceApply("lava_still"));
+		this.lavaFlow = context.sprites().get(Sheets.BLOCKS_MAPPER.defaultNamespaceApply("lava_flow"));
 	}
 
 	@Override

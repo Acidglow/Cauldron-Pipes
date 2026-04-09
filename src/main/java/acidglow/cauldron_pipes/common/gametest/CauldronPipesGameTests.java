@@ -78,7 +78,7 @@ public final class CauldronPipesGameTests
 		TEST_FUNCTIONS.register(path, () -> function);
 	}
 
-	private static void registerTest(RegisterGameTestsEvent event, net.minecraft.core.Holder<TestEnvironmentDefinition> environment, String path)
+	private static void registerTest(RegisterGameTestsEvent event, net.minecraft.core.Holder<TestEnvironmentDefinition<?>> environment, String path)
 	{
 		Identifier id = CauldronPipes.rl(path);
 		event.registerTest(id, new FunctionGameTestInstance(ResourceKey.create(Registries.TEST_FUNCTION, id),
