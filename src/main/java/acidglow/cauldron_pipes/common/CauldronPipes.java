@@ -1,8 +1,5 @@
 package acidglow.cauldron_pipes.common;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import acidglow.cauldron_pipes.common.gametest.CauldronPipesGameTests;
 import acidglow.cauldron_pipes.common.registries.ModBlockEntityTypes;
 import acidglow.cauldron_pipes.common.tile.CauldronBlockEntity;
@@ -16,7 +13,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
@@ -45,8 +41,6 @@ import net.neoforged.neoforge.fluids.FluidType;
 public class CauldronPipes
 {
 	public static final String MODID = "cauldron_pipes";
-	public static final Logger LOGGER = LogManager.getLogger();
-
 	public CauldronPipes()
 	{
 		IEventBus fml_bus = ModLoadingContext.get().getActiveContainer().getEventBus();

@@ -1,0 +1,11 @@
+# Keep scripts and project text portable across platforms.
+* text=auto eol=lf
+*.bat text eol=crlf
+
+# Generated and packaged artifacts are binary.
+*.class binary
+*.dat binary
+*.gz binary
+*.jar binary
+*.mca binary
+*.png binary

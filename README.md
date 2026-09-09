@@ -1,74 +1,39 @@
 # Cauldron-Pipes
 
-This mod is inspired by Tiled Cauldron by gisellevonbingen.
+Cauldron-Pipes is a NeoForge mod that turns vanilla cauldrons into fluid endpoints for automation mods. It is inspired by Tiled Cauldron by gisellevonbingen.
 
-Cauldron-Pipes is a NeoForge mod for Minecraft that turns vanilla cauldrons into proper fluid endpoints for pipe mods.
+## Compatibility
 
-Instead of treating a cauldron as a few hardcoded vanilla states, this mod gives cauldrons an internal fluid tank and exposes that tank through NeoForge fluid capabilities. That lets fluid transport mods interact with cauldrons in a predictable way while still keeping the vanilla cauldron behavior and visuals where possible.
+- Minecraft 26.1
+- NeoForge 26.1.0.19-beta or newer
+- Java 25 for development
 
+## Features
 
-## What This Mod Does
+- Adds fluid tanks and NeoForge fluid capabilities to vanilla water and lava cauldrons.
+- Stores partial water and lava amounts, preserving them through saves and block-state changes.
+- Lets pipes and other standard fluid handlers insert and extract supported fluids.
+- Lets matching buckets top up partial cauldrons; extraction requires a full bucket.
+- Applies the same partial-bucket rules to dispensers.
+- Fills water cauldrons in three water-bottle interactions.
+- Prevents vanilla precipitation, dripstone, and interaction behavior from desynchronizing partial contents.
+- Renders partial lava levels in cauldrons.
 
-- Adds a fluid tank to vanilla cauldrons.
-- Exposes cauldrons as fluid-capable blocks for automation.
-- Supports partial fluid storage instead of only empty or full states.
-- Keeps cauldron block states synchronized with stored fluid data.
-- Preserves partial fluid amounts through save and load.
+## Installation
 
+Install the matching NeoForge version for Minecraft 26.1, then place the mod JAR in the instance or server `mods` directory. Pipe and automation mods need no dedicated integration as long as they use NeoForge fluid capabilities.
 
-## Supported Fluids
+## Building and testing
 
-Currently supported:
+Install JDK 25, then run:
 
-- Water
-- Lava
+```sh
+./gradlew build
+./gradlew runGameTestServer
+```
 
-Water can exist in partial amounts and still maps cleanly to vanilla layered water cauldrons. Lava can also be stored partially, with a custom renderer showing the lava level inside the cauldron.
-
-
-## In-Game Behavior
-
-### Pipe and Automation Support
-
-Cauldrons expose a NeoForge fluid capability, so mods that can insert or extract fluids from standard fluid handlers can interact with them. This mod is built around the use case of connecting pipes to cauldrons and includes Pipez as a development dependency.
-
-
-### Bucket Interactions
-
-- Buckets can top up a partially filled cauldron if the stored fluid matches.
-- Buckets only extract from a managed cauldron when at least one full bucket is available.
-- Dispensers follow the same rules.
-
-This avoids losing fluid or creating inconsistent vanilla state changes when a cauldron contains a managed partial amount.
-
-
-### Bottle Interactions
-
-Water bottles can fill a managed water cauldron in 3 partial steps:
-
-That means three water bottles will fill an empty cauldron to a full bucket.
-
-
-### Vanilla Mutation Protection
-
-When a cauldron is holding a managed fluid amount that does not match a normal vanilla state, the mod blocks vanilla behaviors that would otherwise desync the cauldron, including:
-
-- precipitation filling
-- dripstone filling
-- lowering fill level through vanilla logic
-- extracting full buckets from partial contents
-
-
-## Visuals
-
-Partial lava is rendered inside the cauldron so the stored amount is visible instead of silently existing only in block entity data.
-
+The GameTest server runs the mod's automated interaction, persistence, dispenser, and capability-cache tests.
 
 ## License
 
-MIT
-
-
-## Modpacks
-
-You may use this mod in modpacks under the MIT license.
+Cauldron-Pipes is licensed under the [MIT License](LICENSE). It may be included in modpacks under that license.

@@ -1,8 +1,0 @@
-modLoader="minecraft"
-license="Minecraft EULA"
-[[mods]]
-modId="minecraft"
-version="1.21.11"
-displayName="Minecraft"
-authors="Mojang Studios"
-description=""
