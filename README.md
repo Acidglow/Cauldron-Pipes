@@ -4,7 +4,7 @@ Cauldron-Pipes is a NeoForge mod that turns vanilla cauldrons into fluid endpoin
 
 ## Compatibility
 
-- Minecraft 26.1
+- Minecraft 26.1.x
 - NeoForge 26.1.0.19-beta or newer
 - Java 25 for development
 
@@ -21,7 +21,7 @@ Cauldron-Pipes is a NeoForge mod that turns vanilla cauldrons into fluid endpoin
 
 ## Installation
 
-Install the matching NeoForge version for Minecraft 26.1, then place the mod JAR in the instance or server `mods` directory. Pipe and automation mods need no dedicated integration as long as they use NeoForge fluid capabilities.
+Install a matching NeoForge version for Minecraft 26.1.x, then place the mod JAR in the instance or server `mods` directory. Pipe and automation mods need no dedicated integration as long as they use NeoForge fluid capabilities.
 
 ## Building and testing
 
