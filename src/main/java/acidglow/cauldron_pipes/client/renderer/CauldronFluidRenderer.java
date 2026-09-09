@@ -11,8 +11,8 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.state.level.CameraRenderState;
-import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.client.NeoForgeRenderTypes;
@@ -22,7 +22,7 @@ public class CauldronFluidRenderer implements BlockEntityRenderer<CauldronBlockE
 	private static final float INNER_MIN = 2.0F / 16.0F + 0.001F;
 	private static final float INNER_MAX = 14.0F / 16.0F - 0.001F;
 	private static final float FLUID_FLOOR = 4.0F / 16.0F + 0.001F;
-	private static final RenderType RENDER_TYPE = NeoForgeRenderTypes.getUnsortedTranslucent(TextureAtlas.LOCATION_BLOCKS);
+	private static final RenderType RENDER_TYPE = NeoForgeRenderTypes.getUnsortedTranslucent(Identifier.withDefaultNamespace("textures/atlas/blocks.png"));
 	private final TextureAtlasSprite lavaStill;
 	private final TextureAtlasSprite lavaFlow;
 
