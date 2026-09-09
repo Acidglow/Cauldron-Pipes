@@ -31,7 +31,6 @@ public record CauldronFluidTransfom(Fluid fluid, BlockState blockState)
 	private static final List<CauldronFluidTransfom> LIST = new ArrayList<>();
 	private static final List<CauldronFluidTransfom> LIST_READONLY = Collections.unmodifiableList(LIST);
 	private static final Map<Fluid, CauldronFluidTransfom> BY_FLUIDS = new HashMap<>();
-	private static final Map<Fluid, CauldronFluidTransfom> BY_FLUIDS_READONLY = Collections.unmodifiableMap(BY_FLUIDS);
 
 	public static void bootStrap()
 	{
@@ -145,11 +144,6 @@ public record CauldronFluidTransfom(Fluid fluid, BlockState blockState)
 	public static List<CauldronFluidTransfom> values()
 	{
 		return LIST_READONLY;
-	}
-
-	public static Map<Fluid, CauldronFluidTransfom> byFluids()
-	{
-		return BY_FLUIDS_READONLY;
 	}
 
 	public static CauldronFluidTransfom byFluid(Fluid fluid)

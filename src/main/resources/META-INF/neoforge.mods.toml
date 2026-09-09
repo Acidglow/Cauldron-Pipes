@@ -10,7 +10,6 @@ config="${mod_id}.mixins.json"
     displayName="${mod_name}"
     displayURL="${mod_homepage}"
     authors="Acidglow"
-    logoFile="icon.png"
     description='''${mod_description}'''
 
 [[dependencies.${mod_id}]]
@@ -23,6 +22,6 @@ config="${mod_id}.mixins.json"
 [[dependencies.${mod_id}]]
     modId="neoforge"
     type="required"
-    versionRange="[${neo_version},)"
+    versionRange="${neo_version_range}"
     ordering="NONE"
     side="BOTH"

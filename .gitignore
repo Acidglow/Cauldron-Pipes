@@ -1,0 +1,18 @@
+# Gradle and build output
+.gradle/
+build/
+out/
+bin/
+
+# NeoForge run directories
+runs/
+run/
+
+# IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# OS files
+.DS_Store

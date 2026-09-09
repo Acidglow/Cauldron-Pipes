@@ -328,11 +328,6 @@ public class CauldronTank extends SnapshotJournal<CauldronTank.Snapshot> impleme
 		}
 	}
 
-	public CauldronBlockEntity getBlockEntity()
-	{
-		return this.blockEntity;
-	}
-
 	private boolean isRemoved()
 	{
 		return this.blockEntity.isRemoved();
