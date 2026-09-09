@@ -63,6 +63,7 @@ public class CauldronBlockEntity extends BlockEntity
 	}
 
 	@Override
+	@SuppressWarnings("deprecation") // BlockEntity#setBlockState remains the block-state synchronization hook.
 	public void setBlockState(BlockState state)
 	{
 		super.setBlockState(state);
